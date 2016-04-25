@@ -1,0 +1,93 @@
+#include <iostream>
+
+class Point {
+public:
+	void setX(int x) {
+		itsX = x;
+	}
+	void setY(int y) {
+		itsY = y;
+	}
+	int getX() {
+		return itsX;
+	}
+	int getY() {
+		return itsY;
+	}
+private:
+	int itsX;
+	int itsY;
+};
+
+class Rectangle {
+public:
+	Rectangle(int, int, int, int);
+	~Rectangle() {
+	}
+	;
+
+	int getTop() const {
+		return itsTop;
+	}
+	int getLeft() const {
+		return itsLeft;
+	}
+	int getBottom() const {
+		return itsBottom;
+	}
+	int getRight() const {
+		return itsRight;
+	}
+
+	Point getUpperLeft() {
+		return itsUpperLeft;
+	}
+	Point getLowerLeft() {
+		return itsLowerLeft;
+	}
+	Point getUpperRight() {
+		return itsUpperRight;
+	}
+	Point getLowerRight() {
+		return itsLowerRight;
+	}
+
+	void setUpperLeft(Point location) {
+		itsUpperLeft = location;
+	}
+	void setLowerLeft(Point location) {
+		itsLowerLeft = location;
+	}
+	void setUpperRight(Point location) {
+		itsUpperRight = location;
+	}
+	void setLowerRight(Point location) {
+		itsLowerRight = location;
+	}
+
+	void setTop(int top) {
+		itsTop = top;
+	}
+	void setLeft(int left) {
+		itsLeft = left;
+	}
+	void setBottom(int bottom) {
+		itsBottom = bottom;
+	}
+	void setRight(int right) {
+		itsRight = right;
+	}
+
+	int getArea() const;
+
+private:
+	Point itsUpperLeft;
+	Point itsUpperRight;
+	Point itsLowerLeft;
+	Point itsLowerRight;
+	int itsTop;
+	int itsLeft;
+	int itsBottom;
+	int itsRight;
+};
+
