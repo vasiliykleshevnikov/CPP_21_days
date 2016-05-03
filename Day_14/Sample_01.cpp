@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Horse{
+public:
+	void gallop() { cout << "gallop()..." << endl; }
+	virtual void fly() { cout << "Horses can't fly" << endl; }
+private:
+	int itsAge;
+};
+
+class Pegasus : public Horse{
+public:
+	virtual void fly(){
+		cout << "fly()..." << endl;
+	}
+};
+
+const int NumberHorses = 5;
+
+int main(){
+	Horse* Ranch[NumberHorses];
+	Horse* pHorse;
+	int choise, i;
+	for(i = 0; i < NumberHorses; i++){
+		cout << "(1) Horse (2) Pegasus: ";
+		cin >> choise;
+		if (choise == 2)
+			pHorse = new Pegasus;
+		else
+			pHorse = new Horse;
+		Ranch[i] = pHorse;
+	}
+	cout << endl;
+	for (i = 0; i < NumberHorses; i++){
+		Ranch[i]->fly();
+		delete Ranch[i];
+	}
+	return 0;
+}
+
